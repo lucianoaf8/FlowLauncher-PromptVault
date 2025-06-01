@@ -1,0 +1,12 @@
+{
+  "ID": "3f8a6424-60a1-4ea2-b94f-2a9be9e6c123",
+  "ActionKeyword": "ptp",
+  "Name": "Prompt Vault",
+  "Description": "Fast searchable prompt launcher with clipboard integration",
+  "Author": "Prompt Vault Team",
+  "Version": "1.0.0",
+  "Language": "python",
+  "Website": "lucaverse.com",
+  "IcoPath": "Images\\app.png",
+  "ExecuteFileName": "main.py"
+}

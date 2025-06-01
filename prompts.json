@@ -1,0 +1,384 @@
+{
+  "prompts": [
+    {
+      "id": 1,
+      "title": "Prompt Engineer",
+      "prompt": "You are an expert prompt engineer. For the following task, generate an optimized prompt suitable for {{llm}}:\n\nTask: {{task}}\n\nEnsure it follows best practices, includes necessary context, and is formatted precisely for execution.",
+      "tags": ["prompt", "engineer", "llm", "chatgpt", "claude", "gemini"],
+      "use_case": "prompt-engineering"
+    },
+    {
+      "id":  2,
+      "title": "System Architect",
+      "prompt": "You are an expert system architect. Design a high-level system plan for this requirement:\n\n{{task}}\n\nInclude: overall architecture, component interactions, security considerations, scalability, and maintenance strategy.",
+      "tags": ["architecture", "design", "scalability", "security"],
+      "use_case": "system-design"
+    },
+    {
+      "id": 3,
+      "title": "Python Automation Expert",
+      "prompt": "You are an expert Python automation specialist. Create a workflow solution for this automation need:\n\n{{task}}\n\nInclude: script structure, scheduling approach, error handling, logging, and notification mechanisms.",
+      "tags": ["python", "automation", "scheduling", "logging", "error-handling"],
+      "use_case": "workflow-automation"
+    },
+    {
+      "id": 4,
+      "title": "Excel Automation Assistant",
+      "prompt": "You are an expert Excel automation assistant. For the following spreadsheet task, generate a step-by-step automation plan using Python (pandas/openpyxl) or Office Scripts:\n\n{{task}}\n\nInclude: data extraction, transformation logic, error checks, and output formatting.",
+      "tags": ["excel", "automation", "python", "pandas", "openpyxl"],
+      "use_case": "excel-automation"
+    },
+    {
+      "id": 5,
+      "title": "Linux Server Manager",
+      "prompt": "You are an expert Linux server manager. Provide a configuration and hardening plan for a Linux Mint 22.1 XFCE system to achieve:\n\n{{task}}\n\nInclude: package auditing, XRDP setup, backup/restore, firewall rules, and monitoring recommendations.",
+      "tags": ["linux", "server", "hardening", "backup", "monitoring"],
+      "use_case": "system-administration"
+    },
+    {
+      "id": 6,
+      "title": "AI Trainer / Fine-tuner",
+      "prompt": "You are an expert AI trainer/fine-tuner. Recommend a fine-tuning strategy for this objective:\n\n{{task}}\n\nInclude: model selection (e.g., DreamBooth, LoRA), data preparation steps, training parameters, and evaluation criteria.",
+      "tags": ["ai", "training", "fine-tuning", "dreambooth", "lora"],
+      "use_case": "model-development"
+    },
+    {
+      "id": 7,
+      "title": "FFmpeg Audio Engineer",
+      "prompt": "You are an expert FFmpeg audio engineer. Design a non-admin Windows recording pipeline that captures both microphone and speaker audio:\n\n{{task}}\n\nInclude: ffmpeg commands, Python/sounddevice integration, GUI considerations (Tkinter), and troubleshooting tips.",
+      "tags": ["ffmpeg", "audio", "recording", "tkinter", "python"],
+      "use_case": "audio-engineering"
+    },
+    {
+      "id": 8,
+      "title": "Meta-Prompt Selector",
+      "prompt": "You are an expert meta-prompt selector. Given this user request, choose the best prompt template and produce the final prompt for each LLM:\n\nTask: {{task}}\n\nOutput: \n1. ChatGPT version\n2. Claude version\n3. Gemini version\n\nMaintain intent and optimize style per model.",
+      "tags": ["meta-prompt", "selection", "llm", "translation"],
+      "use_case": "prompt-engineering"
+    },
+    {
+      "id": 9,
+      "title": "Flow Launcher Plugin Expert",
+      "prompt": "You are an expert Flow Launcher plugin developer. Outline a minimal Python+JSON plugin for this functionality:\n\n{{task}}\n\nInclude: folder structure, JSON schema for commands, Python script template, and clipboard integration logic.",
+      "tags": ["flow-launcher", "plugin", "python", "json", "clipboard"],
+      "use_case": "plugin-development"
+    },
+    {
+      "id": 10,
+      "title": "Prompt Style Converter",
+      "prompt": "You are an expert prompt style converter. Translate this generic instruction into optimized prompt formats for:\n\n1. ChatGPT\n2. Claude\n3. Gemini\n\nInstruction: {{task}}\n\nKeep the same objective but adjust style and structure for each model.",
+      "tags": ["prompt", "translation", "llm", "style", "comparison"],
+      "use_case": "prompt-engineering"
+    },
+    {
+      "id": 11,
+      "title": "Agent Instruction Designer",
+      "prompt": "You are an expert agent instruction designer. Create a concise startup prompt for an AI agent with these parameters:\n\nRole: {{role}}\nPurpose: {{task}}\nTone: {{tone}}\nConstraints: {{constraints}}\n\nEnsure directives are clear, responsibilities defined, and behavior boundaries set.",
+      "tags": ["agent", "instruction", "design", "system"],
+      "use_case": "agent-building"
+    },
+    {
+      "id": 12,
+      "title": "API Explainer",
+      "prompt": "You are an expert API explainer. Document this API in an AI-readable format:\n\n{{task}}\n\nInclude: endpoint descriptions, request/response examples, authentication, error codes, and usage notes.",
+      "tags": ["api", "documentation", "explainer", "developer"],
+      "use_case": "documentation"
+    },
+    {
+      "id": 13,
+      "title": "Comprehension Extractor",
+      "prompt": "You are an expert comprehension extractor. From the following transcript or log, extract actionable insights:\n\nTask: {{task}}\n\nContent:\n{{transcript}}\n\nOutput: bullet-point summary, decisions, conflicts, and next steps.",
+      "tags": ["transcript", "summary", "action-items", "analysis"],
+      "use_case": "analysis"
+    },
+    {
+      "id": 14,
+      "title": "Data Indexer",
+      "prompt": "You are an expert data indexer. For this dataset of images or videos, generate metadata entries:\n\nTask: {{task}}\n\nList: {{item_list}}\n\nInclude: filename, timestamp, format, detected objects, and descriptive caption for each item.",
+      "tags": ["data", "indexing", "metadata", "cataloging"],
+      "use_case": "data-labeling"
+    },
+    {
+      "id": 15,
+      "title": "Security Analyst",
+      "prompt": "You are an expert security analyst. Evaluate this system or script for vulnerabilities and compliance:\n\nTask: {{task}}\n\nInclude: threat model, vulnerability assessment, mitigation recommendations, and compliance checklist.",
+      "tags": ["security", "analysis", "vulnerabilities", "compliance"],
+      "use_case": "security"
+    },
+    {
+      "id": 16,
+      "title": "Desktop Agent Builder",
+      "prompt": "You are an expert desktop agent builder. Design a local chatbot application using Electron + Python (no Docker) for:\n\n{{task}}\n\nInclude: GUI layout, IPC between Electron and Python, dependency management, and deployment considerations.",
+      "tags": ["desktop", "agent", "electron", "python", "gui"],
+      "use_case": "application-development"
+    },
+    {
+      "id": 17,
+      "title": "Video Processing Expert",
+      "prompt": "You are an expert video processing specialist. Design a workflow to extract frames and metadata, handle errors, and integrate with analysis models for:\n\n{{task}}\n\nInclude: FFmpeg commands, replicate API usage, error handling, and folder organization.",
+      "tags": ["video", "processing", "ffmpeg", "replicate", "metadata"],
+      "use_case": "video-analysis"
+    },
+    {
+      "id": 18,
+      "title": "Computer Vision Engineer",
+      "prompt": "You are an expert computer vision engineer. Create an image classification pipeline for:\n\n{{task}}\n\nInclude: model choice (e.g., LLaVA, YOLO), preprocessing steps, inference workflow, output organization, and logging.",
+      "tags": ["computer-vision", "pipeline", "llava", "yolo", "classification"],
+      "use_case": "vision-pipeline"
+    },
+    {
+      "id": 19,
+      "title": "Data Pipeline Architect",
+      "prompt": "You are an expert data pipeline architect. Design an end-to-end ETL pipeline for:\n\n{{task}}\n\nInclude: data ingestion, transformation logic, storage schema, logging, and scalability considerations.",
+      "tags": ["data", "pipeline", "ETL", "architecture", "logging"],
+      "use_case": "data-engineering"
+    },
+    {
+      "id": 20,
+      "title": "SharePoint Integration Specialist",
+      "prompt": "You are an expert SharePoint integration specialist. Outline a Python-to-SharePoint data flow for:\n\n{{task}}\n\nInclude: authentication method, folder hierarchy strategy, file upload logic, and error recovery.",
+      "tags": ["sharepoint", "python", "integration", "authentication", "upload"],
+      "use_case": "integration"
+    },
+    {
+      "id": 21,
+      "title": "Ansible/AWX Orchestrator",
+      "prompt": "You are an expert Ansible/AWX orchestrator. Create playbooks and AWX configuration to automate server provisioning and configuration for:\n\n{{task}}\n\nInclude: inventory setup, playbook structure, backup/restore tasks, and role-based access control.",
+      "tags": ["ansible", "AWX", "orchestration", "automation", "provisioning"],
+      "use_case": "infrastructure-automation"
+    },
+    {
+      "id": 22,
+      "title": "Logging & Monitoring Engineer",
+      "prompt": "You are an expert logging and monitoring engineer. Design a centralized logging and alerting framework for:\n\n{{task}}\n\nInclude: tool selection (e.g., Netdata, ELK), log format specification, alert rules, and notification channels.",
+      "tags": ["logging", "monitoring", "alerts", "netdata", "ELK"],
+      "use_case": "operations"
+    },
+    {
+      "id": 23,
+      "title": "Database Administrator",
+      "prompt": "You are an expert database administrator. Optimize the schema and queries for this data source:\n\n{{task}}\n\nInclude: indexing strategy, performance tuning, backup planning, and security configuration.",
+      "tags": ["database", "optimization", "indexing", "backup", "security"],
+      "use_case": "database-management"
+    },
+    {
+      "id": 24,
+      "title": "VPN & Security Specialist",
+      "prompt": "You are an expert VPN and security specialist. Ensure reliable VPN connectivity and secure communication for:\n\n{{task}}\n\nInclude: VPN client configuration, firewall rules, encryption standards, and auditing procedures.",
+      "tags": ["vpn", "security", "firewall", "encryption", "audit"],
+      "use_case": "network-security"
+    },
+    {
+      "id": 25,
+      "title": "Task Scheduler Specialist",
+      "prompt": "You are an expert task scheduler specialist. Configure a Windows Task Scheduler (or equivalent) workflow without admin rights for:\n\n{{task}}\n\nInclude: trigger definitions, dependency handling, silent execution strategy, and failure recovery.",
+      "tags": ["scheduler", "windows", "automation", "tasks", "recovery"],
+      "use_case": "job-scheduling"
+    },
+    {
+      "id": 26,
+      "title": "RAG (Retrieval-Augmented Generation) Specialist",
+      "prompt": "You are an expert RAG specialist. Design a retrieval-augmented generation pipeline for:\n\n{{task}}\n\nInclude: embedding store selection, retrieval mechanism, prompt stitching, and integration with Custom GPT workflows.",
+      "tags": ["RAG", "retrieval", "embeddings", "pipeline", "LLM"],
+      "use_case": "retrieval-generation"
+    },
+    {
+      "id": 27,
+      "title": "Prompt Engineer Follow-Up",
+      "prompt": "Please refine the generated prompt to enforce that the model outputs a valid {{output_format}} and validates each {{element_type}} before proceeding.",
+      "tags": ["prompt", "engineer", "llm", "chatgpt", "claude", "gemini"],
+      "use_case": "prompt-engineering"
+    },
+    {
+      "id": 28,
+      "title": "System Architect Follow-Up",
+      "prompt": "Adjust the system plan to account for {{new_constraint}} and update the scalability strategy accordingly.",
+      "tags": ["architecture", "design", "scalability", "security"],
+      "use_case": "system-design"
+    },
+    {
+      "id": 29,
+      "title": "Python Automation Follow-Up",
+      "prompt": "Insert a pre-execution step to run {{initial_task}} and implement retry logic with up to {{retry_limit}} retries.",
+      "tags": ["python", "automation", "scheduling", "logging", "error-handling"],
+      "use_case": "workflow-automation"
+    },
+    {
+      "id": 30,
+      "title": "Excel Automation Follow-Up",
+      "prompt": "Modify the automation plan to include error handling for {{error_scenario}} and output results to {{destination}}.",
+      "tags": ["excel", "automation", "python", "pandas", "openpyxl"],
+      "use_case": "excel-automation"
+    },
+    {
+      "id": 31,
+      "title": "Linux Server Manager Follow-Up",
+      "prompt": "Extend the configuration plan to include periodic backups to {{backup_location}} and automated integrity checks.",
+      "tags": ["linux", "server", "hardening", "backup", "monitoring"],
+      "use_case": "system-administration"
+    },
+    {
+      "id": 32,
+      "title": "AI Trainer / Fine-tuner Follow-Up",
+      "prompt": "Refine the fine-tuning strategy to incorporate {{additional_data_type}} and adjust training hyperparameters accordingly.",
+      "tags": ["ai", "training", "fine-tuning", "dreambooth", "lora"],
+      "use_case": "model-development"
+    },
+    {
+      "id": 33,
+      "title": "FFmpeg Audio Engineer Follow-Up",
+      "prompt": "Update the recording pipeline to support {{audio_source_type}} and apply noise reduction settings defined by {{noise_profile}}.",
+      "tags": ["ffmpeg", "audio", "recording", "tkinter", "python"],
+      "use_case": "audio-engineering"
+    },
+    {
+      "id": 34,
+      "title": "Meta-Prompt Selector Follow-Up",
+      "prompt": "Add logic to compare generated prompts based on {{evaluation_metric}} and rank them accordingly.",
+      "tags": ["meta-prompt", "selection", "llm", "translation"],
+      "use_case": "prompt-engineering"
+    },
+    {
+      "id": 35,
+      "title": "Flow Launcher Plugin Follow-Up",
+      "prompt": "Optimize the plugin to support {{new_command}} and include dynamic configuration for {{config_parameter}}.",
+      "tags": ["flow-launcher", "plugin", "python", "json", "clipboard"],
+      "use_case": "plugin-development"
+    },
+    {
+      "id": 36,
+      "title": "Prompt Style Converter Follow-Up",
+      "prompt": "Ensure the converted prompts adhere to {{style_guideline}} and include examples for {{example_count}} scenarios.",
+      "tags": ["prompt", "translation", "llm", "style", "comparison"],
+      "use_case": "prompt-engineering"
+    },
+    {
+      "id": 37,
+      "title": "Agent Instruction Designer Follow-Up",
+      "prompt": "Adjust the agent's startup instructions to enforce {{constraint}} and include fallback behavior for {{scenario}}.",
+      "tags": ["agent", "instruction", "design", "system"],
+      "use_case": "agent-building"
+    },
+    {
+      "id": 38,
+      "title": "API Explainer Follow-Up",
+      "prompt": "Add a section for {{additional_endpoint}} and include OAuth2 authentication flow details with {{token_expiry_handling}}.",
+      "tags": ["api", "documentation", "explainer", "developer"],
+      "use_case": "documentation"
+    },
+    {
+      "id": 39,
+      "title": "Comprehension Extractor Follow-Up",
+      "prompt": "Modify the extraction logic to flag any mention of {{keyword}} and categorize action items by {{category_field}}.",
+      "tags": ["transcript", "summary", "action-items", "analysis"],
+      "use_case": "analysis"
+    },
+    {
+      "id": 40,
+      "title": "Data Indexer Follow-Up",
+      "prompt": "Extend metadata generation to include {{additional_field}} and group items into folders based on {{grouping_rule}}.",
+      "tags": ["data", "indexing", "metadata", "cataloging"],
+      "use_case": "data-labeling"
+    },
+    {
+      "id": 41,
+      "title": "Security Analyst Follow-Up",
+      "prompt": "Require the evaluation to cover {{new_attack_vector}} and incorporate regulatory compliance check for {{standard}}.",
+      "tags": ["security", "analysis", "vulnerabilities", "compliance"],
+      "use_case": "security"
+    },
+    {
+      "id": 42,
+      "title": "Desktop Agent Builder Follow-Up",
+      "prompt": "Integrate a logging mechanism for {{event_type}} and configure the build process to include {{dependency_management_tool}}.",
+      "tags": ["desktop", "agent", "electron", "python", "gui"],
+      "use_case": "application-development"
+    },
+    {
+      "id": 43,
+      "title": "Video Processing Expert Follow-Up",
+      "prompt": "Add support for processing {{video_format}} and include frame rate adjustment based on {{framerate_setting}}.",
+      "tags": ["video", "processing", "ffmpeg", "replicate", "metadata"],
+      "use_case": "video-analysis"
+    },
+    {
+      "id": 44,
+      "title": "Computer Vision Engineer Follow-Up",
+      "prompt": "Enhance the pipeline to detect {{additional_object}} and output confidence scores alongside {{output_format}}.",
+      "tags": ["computer-vision", "pipeline", "llava", "yolo", "classification"],
+      "use_case": "vision-pipeline"
+    },
+    {
+      "id": 45,
+      "title": "Data Pipeline Architect Follow-Up",
+      "prompt": "Modify the ETL pipeline to source data from {{new_data_source}} and include a data validation step for {{validation_rule}}.",
+      "tags": ["data", "pipeline", "ETL", "architecture", "logging"],
+      "use_case": "data-engineering"
+    },
+    {
+      "id": 46,
+      "title": "SharePoint Integration Specialist Follow-Up",
+      "prompt": "Update the data flow to handle large file uploads with chunking of size {{chunk_size}} and implement retry on {{failure_condition}}.",
+      "tags": ["sharepoint", "python", "integration", "authentication", "upload"],
+      "use_case": "integration"
+    },
+    {
+      "id": 47,
+      "title": "Ansible/AWX Orchestrator Follow-Up",
+      "prompt": "Extend the playbooks to include post-provisioning tasks for {{service_setup}} and configure AWX notifications on {{event}}.",
+      "tags": ["ansible", "AWX", "orchestration", "automation", "provisioning"],
+      "use_case": "infrastructure-automation"
+    },
+    {
+      "id": 48,
+      "title": "Logging & Monitoring Engineer Follow-Up",
+      "prompt": "Enhance alert rules to trigger on {{threshold_condition}} and include dashboard visualization for {{metric}}.",
+      "tags": ["logging", "monitoring", "alerts", "netdata", "ELK"],
+      "use_case": "operations"
+    },
+    {
+      "id": 49,
+      "title": "Database Administrator Follow-Up",
+      "prompt": "Optimize the database by adding indexing for {{index_field}} and adjust query plans for {{query_pattern}}.",
+      "tags": ["database", "optimization", "indexing", "backup", "security"],
+      "use_case": "database-management"
+    },
+    {
+      "id": 50,
+      "title": "VPN & Security Specialist Follow-Up",
+      "prompt": "Configure the VPN to enforce {{encryption_protocol}} and add monitoring for {{security_event}}.",
+      "tags": ["vpn", "security", "firewall", "encryption", "audit"],
+      "use_case": "network-security"
+    },
+    {
+      "id": 51,
+      "title": "Task Scheduler Specialist Follow-Up",
+      "prompt": "Add a fallback trigger that runs {{fallback_task}} if the primary job fails more than {{retry_count}} times.",
+      "tags": ["scheduler", "windows", "automation", "tasks", "recovery"],
+      "use_case": "job-scheduling"
+    },
+    {
+      "id": 52,
+      "title": "RAG Specialist Follow-Up",
+      "prompt": "Incorporate ad-hoc retrieval from {{external_source}} and optimize prompt context window to {{context_size}} tokens.",
+      "tags": ["RAG", "retrieval", "embeddings", "pipeline", "LLM"],
+      "use_case": "retrieval-generation"
+    }
+  ],
+  "metadata": {
+    "version": "1.0",
+    "last_updated": "2025-06-01T13:00:00Z",
+    "total_prompts": 52,
+    "categories": [
+      "communication",
+      "development",
+      "documentation",
+      "planning",
+      "education",
+      "analysis",
+      "marketing",
+      "problem-solving",
+      "security"
+    ]
+  }
+}
