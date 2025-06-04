@@ -260,6 +260,31 @@ class PromptVaultTester:
             return True
         except Exception:
             return False
+
+    def test_preview_functionality(self):
+        """Test preview_prompt returns a valid result"""
+        try:
+            plugin = PromptVaultPlugin()
+            plugin.prompts_file_path = self.test_prompts_file
+            plugin._load_prompts()
+
+            first = plugin.prompts_data[0]
+            context_data = json.dumps({
+                "prompt": first["prompt"],
+                "title": first["title"]
+            })
+
+            results = plugin.preview_prompt(context_data)
+            if not isinstance(results, list) or len(results) != 1:
+                return False
+            result = results[0]
+            if result.get("Title") != first["title"]:
+                return False
+            if "SubTitle" not in result:
+                return False
+            return True
+        except Exception:
+            return False
     
     def test_clipboard_operations(self):
         """Test clipboard copy functionality"""
@@ -517,6 +542,7 @@ class PromptVaultTester:
             ("Search Functionality", self.test_search_functionality),
             ("JSON-RPC Query Request", self.test_jsonrpc_query_request),
             ("JSON-RPC Copy Action", self.test_jsonrpc_copy_action),
+            ("Preview Functionality", self.test_preview_functionality),
             ("Clipboard Operations", self.test_clipboard_operations),
             ("Error Handling", self.test_error_handling),
             ("JSON Output Format", self.test_json_output_format),

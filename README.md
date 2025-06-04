@@ -32,6 +32,7 @@ C:\Users\lucia\AppData\Roaming\FlowLauncher\Plugins\PromptVault\
 - **Search specific prompts**: `ptp email`, `ptp code`, `ptp meeting`
 - **Multi-word search**: `ptp code review`, `ptp email template`
 - **Select and use**: Press Enter to copy prompt to clipboard and auto-paste
+- **Preview prompt**: Open the context menu on a result and choose *Preview Prompt*
 
 ### 3. Testing
 
@@ -77,6 +78,7 @@ C:\Users\lucia\AppData\Roaming\FlowLauncher\Plugins\PromptVault\
 - Template variables (e.g., `{{message}}`) replaced with `[variable]` for readability
 - Truncated previews for optimal display
 - Tag integration in subtitles
+- Context menu preview to view full prompt
 
 #### Reliable Auto-Paste
 - Multiple fallback methods:

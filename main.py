@@ -88,6 +88,15 @@ class PromptVaultPlugin:
             cleaned = cleaned[:77] + "..."
         
         return cleaned if cleaned else "Template prompt"
+
+    def _clean_full_text(self, text):
+        """Clean prompt text for full preview without truncation"""
+        if not text:
+            return "No description available"
+
+        cleaned = re.sub(r'\{\{[^}]+\}\}', '[variable]', text)
+        cleaned = re.sub(r'\s+', ' ', cleaned).strip()
+        return cleaned if cleaned else "Template prompt"
     
     def _search_prompts(self, query_terms):
         """Search prompts across all fields with relevance ranking"""
@@ -283,7 +292,7 @@ class PromptVaultPlugin:
                     "prompt": prompt_text,
                     "title": title
                 })
-                
+
                 formatted_results.append({
                     "Title": title,
                     "SubTitle": subtitle,
@@ -291,7 +300,8 @@ class PromptVaultPlugin:
                     "JsonRPCAction": {
                         "method": "copy_prompt",
                         "parameters": [context_data]
-                    }
+                    },
+                    "ContextData": context_data
                 })
             
             return formatted_results
@@ -319,16 +329,55 @@ class PromptVaultPlugin:
                 self._auto_paste()
             
             return []
-            
+
         except Exception:
             return []
 
+    def preview_prompt(self, context_data):
+        """Return a preview result for the given prompt"""
+        try:
+            data = json.loads(context_data)
+            prompt_text = data.get('prompt', '')
+            title = data.get('title', 'Prompt Preview')
 
-def handle_jsonrpc_request(request_data):
+            preview = self._clean_full_text(prompt_text)
+
+            return [{
+                "Title": title,
+                "SubTitle": preview,
+                "IcoPath": "Images\\app.png",
+            }]
+        except Exception:
+            return []
+
+    def context_menu(self, context_data):
+        """Return context menu options for a result"""
+        return [
+            {
+                "Title": "Copy Prompt",
+                "IcoPath": "Images\\app.png",
+                "JsonRPCAction": {
+                    "method": "copy_prompt",
+                    "parameters": [context_data]
+                }
+            },
+            {
+                "Title": "Preview Prompt",
+                "IcoPath": "Images\\app.png",
+                "JsonRPCAction": {
+                    "method": "preview_prompt",
+                    "parameters": [context_data],
+                    "dontHideAfterAction": True
+                }
+            }
+        ]
+
+
+def handle_jsonrpc_request(request_data, prompts_file_path=None):
     """Handle JSON-RPC request from Flow Launcher"""
     try:
         # Initialize plugin
-        plugin = PromptVaultPlugin()
+        plugin = PromptVaultPlugin(prompts_file_path)
         
         if not request_data:
             return {"result": []}
@@ -346,13 +395,29 @@ def handle_jsonrpc_request(request_data):
         if method == 'query':
             query_text = parameters[0] if parameters else ""
             results = plugin.query(query_text)
+            if not isinstance(results, list):
+                return {"result": [{
+                    "Title": "Invalid Response Format",
+                    "SubTitle": "Query returned invalid format",
+                    "IcoPath": "Images\\app.png"
+                }]}
             return {"result": results}
-            
+
         elif method == 'copy_prompt':
             context_data = parameters[0] if parameters else ""
             results = plugin.copy_prompt(context_data)
             return {"result": results}
-        
+
+        elif method == 'preview_prompt':
+            context_data = parameters[0] if parameters else ""
+            results = plugin.preview_prompt(context_data)
+            return {"result": results}
+
+        elif method == 'context_menu':
+            context_data = parameters[0] if parameters else ""
+            results = plugin.context_menu(context_data)
+            return {"result": results}
+
         else:
             return {"result": []}
             
@@ -373,12 +438,16 @@ def main():
         input_data = ""
         if len(sys.argv) > 1:
             input_data = sys.argv[1]
-        
+
         if not input_data:
-            # No input, return empty result
+            try:
+                input_data = sys.stdin.read().strip()
+            except Exception:
+                input_data = ""
+
+        if not input_data:
             response = {"result": []}
         else:
-            # Handle the request
             response = handle_jsonrpc_request(input_data)
         
         # Output JSON response
